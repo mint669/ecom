@@ -8,5 +8,8 @@
     },
     "dependencies": {
         "mongoose": "^8.19.1"
+    },
+    "exports": {
+        ".": "./src/index.ts"
     }
 }
