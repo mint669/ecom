@@ -1,6 +1,8 @@
 import Fastify from "fastify";
 import { clerkPlugin } from "@clerk/fastify";
 import { shouldBeUser } from "./middleware/authMiddleware";
+import orderRoutes from "./routes/order";
+import { connectOrderDB } from "@repo/order-db";
 
 const fastify = Fastify();
 
@@ -21,8 +23,12 @@ fastify.get("/test", { preHandler: shouldBeUser }, (request, reply) => {
   });
 });
 
+fastify.register(orderRoutes, { prefix: "/api" });
+
 const start = async () => {
   try {
+    await connectOrderDB();
+    // console.log("Connected to MongoDB.");
     await fastify.listen({ port: 8081 });
     console.log("Order service is running on port 8081");
   } catch (error) {
