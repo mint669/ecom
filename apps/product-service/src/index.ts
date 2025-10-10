@@ -2,7 +2,7 @@ import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
 
 import { clerkMiddleware, getAuth } from "@clerk/express";
-import { shouldBeUser } from "./middleware/middleware.js";
+import { shouldBeUser } from "./middleware/authMiddleware.js";
 import routes from "./routes";
 import morgan from "morgan";
 

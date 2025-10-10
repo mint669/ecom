@@ -199,10 +199,16 @@ importers:
       '@clerk/fastify':
         specifier: ^2.4.37
         version: 2.4.37(fastify@5.6.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@repo/order-db':
+        specifier: workspace:*
+        version: link:../../packages/order-db
       fastify:
         specifier: ^5.5.0
         version: 5.6.1
     devDependencies:
+      '@repo/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
@@ -228,6 +234,9 @@ importers:
         specifier: ^4.9.10
         version: 4.9.10
     devDependencies:
+      '@repo/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
@@ -259,6 +268,9 @@ importers:
         specifier: ^1.10.1
         version: 1.10.1
     devDependencies:
+      '@repo/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
@@ -336,6 +348,15 @@ importers:
       prisma:
         specifier: ^6.17.0
         version: 6.17.0(typescript@5.9.3)
+
+  packages/types:
+    devDependencies:
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/node':
+        specifier: ^24.7.1
+        version: 24.7.1
 
   packages/typescript-config: {}
 
@@ -1587,6 +1608,9 @@ packages:
 
   '@types/node@24.7.0':
     resolution: {integrity: sha512-IbKooQVqUBrlzWTi79E8Fw78l8k1RNtlDDNWsFZs7XonuQSJ8oNYfEeclhprUldXISRMLzBpILuKgPlIxm+/Yw==}
+
+  '@types/node@24.7.1':
+    resolution: {integrity: sha512-CmyhGZanP88uuC5GpWU9q+fI61j2SkhO3UGMUdfYRE6Bcy0ccyzn1Rqj9YAB/ZY4kOXmNf0ocah5GtphmLMP6Q==}
 
   '@types/qs@6.14.0':
     resolution: {integrity: sha512-eOunJqu0K1923aExK6y8p6fsihYEn/BYuQ4g0CxAAgFc4b/ZLN4CrsRZ55srTdqoiLzU2B2evC+apEIxprEzkQ==}
@@ -4727,6 +4751,10 @@ snapshots:
       undici-types: 6.21.0
 
   '@types/node@24.7.0':
+    dependencies:
+      undici-types: 7.14.0
+
+  '@types/node@24.7.1':
     dependencies:
       undici-types: 7.14.0
 
