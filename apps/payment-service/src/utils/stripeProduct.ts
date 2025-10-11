@@ -1,6 +1,6 @@
 import stripe from "./strip";
 
-export const createStripeProduct = async (item) => {
+export const createStripeProduct = async (item: any) => {
   try {
     const res = await stripe.products.create({
       id: item.id,

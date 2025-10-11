@@ -17,6 +17,14 @@ app.get("/health", (c) => {
   });
 });
 
+app.get("/test", shouldBeUser, (c) => {
+
+  return c.json({
+    message: "Payment service is authenticated.",
+    userId: c.get("userId")
+  });
+});
+
 // app.post("/create-strip-product", async (c) => {
 //   const res = await stripe.products.create({
 //     id: "123",

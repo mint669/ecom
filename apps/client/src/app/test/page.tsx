@@ -22,7 +22,6 @@ const TestPage = async () => {
   const dataOrder = await resOrder.json();
   console.log("dataOrder >>>", dataOrder);
 
-
   const resPayment = await fetch("http://localhost:8082/test", {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -30,7 +29,7 @@ const TestPage = async () => {
   });
   const dataPayment = await resPayment.json();
   console.log("dataPayment >>>", dataPayment);
-  
+
   return <div>TestPage</div>;
 };
 
